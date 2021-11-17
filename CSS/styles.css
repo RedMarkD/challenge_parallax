@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/11_background.png);
+    position: absolute;
+    z-index: auto;
+}
+
+#layer1 {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/10_distant_clouds.png);
+    position: absolute;
+    z-index: 2;
+}
+/*#layer1 {*/
+/*    width: 100%;*/
+/*    height: 100vh;*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    background-image: url(../img/09_distant_clouds1.png);*/
+/*    position: absolute;*/
+/*    z-index: 2;*/
+/*    transform: translate(0%, 5%);*/
+
+/*}*/
+
+#layer2 {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/01_ground.png);
+    position: absolute;
+    z-index: 5;
+    transform: translate(0%, -30%);
+ }
+#layer3 {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/06_hill2.png);
+    position: absolute;
+    z-index: 4;
+    transform: translate(0%, -30%);
+}
+
+#layer4 {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/02_trees_and_bushes.png);
+    position: absolute;
+    z-index: 6;
+    transform: translate(0%, -30%);
+}
+
+
+
+#player {
+    z-index: 8;
+    width: 150px;
+    height: 150px;
+    background-image: url(../img/idle.gif);
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
