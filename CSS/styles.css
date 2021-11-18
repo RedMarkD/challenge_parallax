@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body {
@@ -59,7 +59,51 @@ body {
     transform: translate(0%, -30%);
  }
 
+#Roundground {
+    width: 668px;
+    height: 654px;
+    background-size: 550px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/COOKIE.png);
+    position: absolute;
+    z-index: 10;
+    left : calc((100% - 668px) / 2);
+    top: calc((100% - 654px) / 2);
+}
 
+#Roundtrees {
+    width: 988px;
+    height: 990px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/NEWTREE.png);
+    position: absolute;
+    z-index: 9;
+    left : calc((100% - 988px) / 2);
+    top: calc((100% - 990px) / 2);
+}
+#Roundhills {
+    width: 1401px;
+    height: 1400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/RoundHills.png);
+    position: absolute;
+    z-index: 8;
+    left : calc((100% - 1401px) / 2);
+    top: calc((100% - 1400px) / 2);
+}
+.container {
+    background-position-y: 50%;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    transform: translate(0% , 50%);
+    overflow: visible;
+}
 
 #player {
     z-index: 20;
@@ -73,18 +117,20 @@ body {
 }
 
 
-.image-cropper {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-}
 
-img {
-    display: inline;
-    margin: 0 auto;
-    height: 100%;
-    width: auto;
-}
 
+/* fisheye */
+/*.image-cropper {*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*    border-radius: 50%;*/
+/*}*/
+
+/*img {*/
+/*    display: inline;*/
+/*    margin: 0 auto;*/
+/*    height: 100%;*/
+/*    width: auto;*/
+/*}*/
