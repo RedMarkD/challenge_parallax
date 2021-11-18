@@ -13,6 +13,7 @@ body {
     background-image: url(../img/11_background.png);
     position: absolute;
     z-index: auto;
+    overflow: hidden;
 }
 /* todo: remove basic elements for standard parallax
 /*#clouds {*/
@@ -103,19 +104,22 @@ body {
     width: 100%;
     background-size: cover;
     overflow: hidden;
+    position: center;
 }
 #up {
-    position: fixed;
+    position: relative;
     top: 0;
     height:50%;
     width:100%;
+    overflow: hidden;
 }
 #down {
-    position:fixed;
+    position:relative;
     bottom: 0;
     height:50%;
     width:100%;
     transform: scaleY(-1);
+    overflow: hidden;
 }
 
 #player {

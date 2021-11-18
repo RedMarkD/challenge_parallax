@@ -17,6 +17,7 @@ const roundhills = document.getElementsByClassName("Roundhills");
 const round = document.getElementsByClassName('round')
 const container = document.getElementsByClassName('container');
 let remember = 0;
+let tilt = 0;
 
 //setTimeout()
 
@@ -43,6 +44,15 @@ document.addEventListener('keyup', function(event) {
 console.log(remember)
 //backgroundposition Xright
 function changeChar(){
+    if (moveArray.includes("ArrowUp")){
+        tilt +=1
+        moveBack()
+    }
+    if (moveArray.includes("ArrowDown")){
+        tilt -=1
+        moveBack()
+    }
+
     if (moveArray.includes("ArrowRight")){
         player.style.backgroundImage="url(../img/run.gif)";
         player.style.transform = "scaleX(1)";
@@ -87,7 +97,7 @@ function moveBack(){
      //container.style.setProperty("-webkit-transform", "rotate("+remember+"deg)", null);
 
     //todo: remove whole document turns this way
-    //document.body.style.setProperty("-webkit-transform", "rotate("+-remember+"deg)", null);
+    document.body.style.setProperty("-webkit-transform", "rotate("+tilt+"deg)", null);
 }
 
 //container and overflow hidden. for half circle turn::
