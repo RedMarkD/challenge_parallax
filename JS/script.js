@@ -11,10 +11,11 @@ const clouds = document.getElementById("clouds");
 const ground = document.getElementById("ground");
 const hills = document.getElementById("hills");
 const trees = document.getElementById("trees");
-const roundground = document.getElementById("Roundground");
-const roundtrees = document.getElementById("Roundtrees");
-const roundhills = document.getElementById("Roundhills");
-const container = document.getElementById('container');
+const roundground = document.getElementsByClassName("Roundground");
+const roundtrees = document.getElementsByClassName("Roundtrees");
+const roundhills = document.getElementsByClassName("Roundhills");
+const round = document.getElementsByClassName('round')
+const container = document.getElementsByClassName('container');
 let remember = 0;
 
 //setTimeout()
@@ -60,14 +61,32 @@ function changeChar(){
 }
 
 function moveBack(){
+    //
+    // container.forEach(()=>{
+    //     document.write("div",'<div id="Roundground"></div>', );
+
+    // })
+    // container.forEach(roundtrees=>{
+    //     roundtrees.setProperty("-webkit-transform", "rotate("+remember+"deg)", null);
+    // })
+    // container.forEach(roundhills=>{
+    //     roundhills.setProperty("-webkit-transform", "rotate("+0.5*remember+"deg)", null);
+    // })
+
+//todo: remove if new version works.
+    roundground[0].style.setProperty("-webkit-transform", "rotate("+1.5*remember+"deg)", null);
+    roundtrees[0].style.setProperty("-webkit-transform", "rotate("+remember+"deg)", null);
+    roundhills[0].style.setProperty("-webkit-transform", "rotate("+0.5*remember+"deg)", null);
+    roundground[1].style.setProperty("-webkit-transform", "rotate("+1.5*remember+"deg)", null);
+    roundtrees[1].style.setProperty("-webkit-transform", "rotate("+remember+"deg)", null);
+    roundhills[1].style.setProperty("-webkit-transform", "rotate("+0.5*remember+"deg)", null);
     // clouds.style.backgroundPositionX = remember+"px";
     // hills.style.backgroundPositionX = 4*remember+"px";
     // trees.style.backgroundPositionX = 6*remember+"px";
     // ground.style.backgroundPositionX = 8*remember+"px";
-    // container.style.setProperty("-webkit-transform", "rotate("+remember+"deg)", null);
-    roundground.style.setProperty("-webkit-transform", "rotate("+1.5*remember+"deg)", null);
-    roundtrees.style.setProperty("-webkit-transform", "rotate("+remember+"deg)", null);
-    roundhills.style.setProperty("-webkit-transform", "rotate("+0.5*remember+"deg)", null);
+     //container.style.setProperty("-webkit-transform", "rotate("+remember+"deg)", null);
+
+    //todo: remove whole document turns this way
     //document.body.style.setProperty("-webkit-transform", "rotate("+-remember+"deg)", null);
 }
 
