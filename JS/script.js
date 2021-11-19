@@ -20,7 +20,7 @@ const tilter = document.getElementById("tilter")
 const burger = document.getElementById("burger");
 let remember = 0;
 let tilt = 0;
-
+let counter = document.getElementById("counter").value;
 //setTimeout()
 
 document.addEventListener('keydown', function(event) {
@@ -93,25 +93,31 @@ function moveBurger(){
     // burger.style.top =  (15*remember)+"px";
 }
 
+let t = false;
 function touch() {
-
-    let d1 = document.getElementById('player').getBoundingClientRect();
-    let d2 = document.getElementById('burger').getBoundingClientRect();
-
-    function touching(div1,div2){
+    let d1 = player.getBoundingClientRect();
+    let d2 = burger.getBoundingClientRect();
+    function touching(div1,div2) {
         let ox = Math.abs(d1.x - d2.x) < (d1.x < d2.x ? d2.width : d1.width);
-        let oy= Math.abs(d1.y - d2.y) < (d1.y < d2.y ? d2.height : d1.height);
-        return ox && oy;
+        let oy = Math.abs(d1.y - d2.y) < (d1.y < d2.y ? d2.height : d1.height);
+        if (ox && oy) {
+            return ox && oy;
+        }
+        else {
+            return false;
+        }
     }
-
-    let t = touching(d1, d2);
+    t = touching(d1, d2)
     console.log(t);
     if (t === true)
     {
         let random = Math.ceil(Math.random() * 100);
         console.log("HIT");
         burger.style.left = random + "%";
+        remember = random*0.5;
+        console.log(remember);
         t = false;
+        counter += 1;
     }
     else
     {
