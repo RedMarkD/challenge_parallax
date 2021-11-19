@@ -15,62 +15,30 @@ body {
     z-index: auto;
     overflow: hidden;
 }
-/* todo: remove basic elements for standard parallax
-/*#clouds {*/
-/*    width: 100%;*/
-/*    height: 100vh;*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    background-image: url(../img/10_distant_clouds.png);*/
-/*    position: absolute;*/
-/*    z-index: 7;*/
-/*    transform: translate(0%, -10%);*/
-/*}*/
 
-/*#hills {*/
-/*    width: 100%;*/
-/*    height: 100vh;*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    background-image: url(../img/06_hill2.png);*/
-/*    position: absolute;*/
-/*    z-index: 4;*/
-/*    transform: translate(0%, -30%);*/
-/*}*/
-
-/*#trees {*/
-/*    width: 100%;*/
-/*    height: 100vh;*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    background-image: url(../img/02_trees_and_bushes.png);*/
-/*    position: absolute;*/
-/*    z-index: 6;*/
-/*    transform: translate(0%, -30%);*/
-/*!*}*!*/
-
-/*#ground {*/
-/*    width: 100%;*/
-/*    height: 100vh;*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    background-image: url(../img/01_ground.png);*/
-/*    position: absolute;*/
-/*    z-index: 7;*/
-/*    transform: translate(0%, -30%);*/
-/* }*/
+.tilter {
+    width: 100%;
+    height: 100vh;
+    background-origin:border-box;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/11_background.png);
+    position: absolute;
+    z-index: auto;
+    overflow: visible;
+}
 
 .Roundground {
     width: 668px;
     height: 654px;
-    background-size: 550px;
+    background-size: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url(../img/COOKIE.png);
     position: absolute;
     z-index: 10;
     left : calc((100% - 668px) / 2);
-    top: 10vh;
+    top: 50px;
 }
 
 .Roundtrees {
@@ -98,14 +66,9 @@ body {
     top: -300px;
 }
 .container {
-    background-position-y: 50%;
-    bottom: -100px;
     height: 100vh;
-    width: 100%;
-    background-size: cover;
-    overflow: hidden;
-    position: center;
 }
+
 #up {
     position: relative;
     top: 0;
@@ -123,6 +86,7 @@ body {
 }
 
 #player {
+    border-color: black;
     z-index: 20;
     width: 65px;
     height: 100px;
@@ -133,19 +97,13 @@ body {
     top: calc((100% - 100px) / 2);
 }
 
-
-/* fisheye */
-/*.image-cropper {*/
-/*    width: 100px;*/
-/*    height: 100px;*/
-/*    position: relative;*/
-/*    overflow: hidden;*/
-/*    border-radius: 50%;*/
-/*}*/
-
-/*img {*/
-/*    display: inline;*/
-/*    margin: 0 auto;*/
-/*    height: 100%;*/
-/*    width: auto;*/
-/*}*/
+#burger {
+     position: absolute;
+     height: 100px;
+     width: 100px;
+     background-size: cover;
+     background-image: url("../img/BURGER.png");
+     z-index: 30;
+     left : calc((100% - 200px) / 2);
+     top: calc((100% - 100px) / 2);
+ }

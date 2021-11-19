@@ -16,6 +16,8 @@ const roundtrees = document.getElementsByClassName("Roundtrees");
 const roundhills = document.getElementsByClassName("Roundhills");
 const round = document.getElementsByClassName('round')
 const container = document.getElementsByClassName('container');
+const tilter = document.getElementById("tilter")
+const burger = document.getElementById("burger");
 let remember = 0;
 let tilt = 0;
 
@@ -26,44 +28,44 @@ document.addEventListener('keydown', function(event) {
     if (!moveArray.includes(key)){
         moveArray.push(key)
     }
-    console.log(key);
-    console.log(moveArray);
+    // console.log(key);
+    // console.log(moveArray);
     changeChar()
 });
-
+moveBurger()
 document.addEventListener('keyup', function(event) {
     const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
     if (moveArray.includes(key)){
         moveArray.splice(key)
     }
     moveArray.splice(key);
-    console.log(key);
-    console.log(moveArray);
+    //console.log(key);
+    //console.log(moveArray);
     changeChar()
 });
 console.log(remember)
 //backgroundposition Xright
 function changeChar(){
     if (moveArray.includes("ArrowUp")){
-        tilt +=1
-        moveBack()
+        tilt +=1;
+        runAll();
     }
     if (moveArray.includes("ArrowDown")){
-        tilt -=1
-        moveBack()
+        tilt -=1;
+        runAll();
     }
 
     if (moveArray.includes("ArrowRight")){
         player.style.backgroundImage="url(../img/run.gif)";
         player.style.transform = "scaleX(1)";
         remember -= 1;
-        moveBack()
+        runAll();
     }
     else if (moveArray.includes("ArrowLeft")){
         player.style.transform = "scaleX(-1)";
         player.style.backgroundImage="url(../img/run.gif)";
         remember += 1;
-        moveBack()
+        runAll();
     }
     else {
         player.style.backgroundImage="url(../img/idle.gif)"
@@ -71,18 +73,6 @@ function changeChar(){
 }
 
 function moveBack(){
-    //
-    // container.forEach(()=>{
-    //     document.write("div",'<div id="Roundground"></div>', );
-
-    // })
-    // container.forEach(roundtrees=>{
-    //     roundtrees.setProperty("-webkit-transform", "rotate("+remember+"deg)", null);
-    // })
-    // container.forEach(roundhills=>{
-    //     roundhills.setProperty("-webkit-transform", "rotate("+0.5*remember+"deg)", null);
-    // })
-
 //todo: remove if new version works.
     roundground[0].style.setProperty("-webkit-transform", "rotate("+1.5*remember+"deg)", null);
     roundtrees[0].style.setProperty("-webkit-transform", "rotate("+remember+"deg)", null);
@@ -97,7 +87,25 @@ function moveBack(){
      //container.style.setProperty("-webkit-transform", "rotate("+remember+"deg)", null);
 
     //todo: remove whole document turns this way
-    document.body.style.setProperty("-webkit-transform", "rotate("+tilt+"deg)", null);
+    tilter.style.setProperty("-webkit-transform", "rotate("+tilt+"deg)", null);
+}
+
+function moveBurger(){
+    burger.style.left = 10*remember+"px";
+    // burger.style.top =  (15*remember)+"px";
+}
+function collision() {
+    console.log(player.style.left);
+    console.log(burger.style.left);
+    if (burger.style.left >= 732.3+"px"){
+        console.log("HIT")
+    }
+}
+
+function runAll(){
+    moveBack();
+    moveBurger();
+    collision()
 }
 
 //container and overflow hidden. for half circle turn::
